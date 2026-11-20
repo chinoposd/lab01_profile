@@ -44,18 +44,13 @@ Commit e8d686b (Add Like counter using setState)
 
 | กรณี | วิธีทดสอบ | ผลที่ได้จริง |
 |---|---|---|
-| Normal 1 | เปิดแอปใหม่ | |
-| Normal 2 | กด Like 1 ครั้ง | |
-| Boundary 1 | กด Like 20 ครั้งจาก 0 | |
-| Boundary 2 | หมุนหน้าจอแนวนอน | |
-| Reload | กด Like 3 ครั้ง แล้วกด r และ R | |
-| Failure | ปิด Emulator แล้วลอง flutter run | |
+| Normal 1 | เปิดแอปใหม่ | แอปแสดงชื่อ รหัสนักศึกษา ไอคอน และ Likes: 0 ได้ถูกต้อง |
+| Normal 2 | กด Like 1 ครั้ง | รอทดสอบจาก Likes: 0 ว่าเพิ่มเป็น 1 |
+| Boundary 1 | กด Like 20 ครั้งจาก 0 | รอทดสอบว่าค่าเพิ่มเป็น 20 และแอปไม่เกิด Error |
+| Boundary 2 | หมุนหน้าจอแนวนอน | รอทดสอบการจัดวางและตรวจว่าไม่มีข้อความล้นจอ |
+| Reload | กด Like 3 ครั้ง แล้วกด r และ R | Hot Reload และ Hot Restart ทำงานสำเร็จ หลัง Hot Restart ค่า Likes กลับเป็น 0 (ตรวจยืนยันค่า 3 หลัง r อีกครั้ง) |
+| Failure | ปิด Emulator แล้วลอง flutter run | รอทดสอบและบันทึกข้อความที่ Terminal แสดง |
 
 ## การใช้ AI
 
-ใช้ ChatGPT ช่วยอธิบายการสร้าง Flutter App,
-การทำงานของ StatefulWidget และ setState(),
-การใช้ Git และการแก้ปัญหา Gradle Build
-
-จากนั้นนำโค้ดไปรันและทดสอบบน Android Emulator
-ด้วยตนเอง
+ใช้ ChatGPT ช่วยอธิบายขั้นตอนการสร้างแอป Flutter การทำงานของ StatefulWidget และ setState() การใช้ Git และ GitHub รวมถึงช่วยวิเคราะห์และแก้ปัญหา Gradle Build นอกจากนี้ยังใช้ช่วยร่างโค้ดและคำตอบในรายงาน โดยนำโค้ดไปรันและตรวจสอบบน Android Emulator ด้วยตนเอง
