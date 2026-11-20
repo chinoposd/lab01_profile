@@ -36,3 +36,26 @@ Commit e8d686b (Add Like counter using setState)
 เป็นการเปลี่ยน HomePage เป็น StatefulWidget
 เพิ่มตัวแปร _likes และเพิ่มปุ่ม Like ที่เรียก
 ฟังก์ชัน _like() เพื่อเปลี่ยนจำนวน Likes
+
+
+
+
+## ตารางทดสอบ 6 กรณี
+
+| กรณี | วิธีทดสอบ | ผลที่ได้จริง |
+|---|---|---|
+| Normal 1 | เปิดแอปใหม่ | |
+| Normal 2 | กด Like 1 ครั้ง | |
+| Boundary 1 | กด Like 20 ครั้งจาก 0 | |
+| Boundary 2 | หมุนหน้าจอแนวนอน | |
+| Reload | กด Like 3 ครั้ง แล้วกด r และ R | |
+| Failure | ปิด Emulator แล้วลอง flutter run | |
+
+## การใช้ AI
+
+ใช้ ChatGPT ช่วยอธิบายการสร้าง Flutter App,
+การทำงานของ StatefulWidget และ setState(),
+การใช้ Git และการแก้ปัญหา Gradle Build
+
+จากนั้นนำโค้ดไปรันและทดสอบบน Android Emulator
+ด้วยตนเอง
