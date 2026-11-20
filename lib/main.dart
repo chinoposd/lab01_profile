@@ -18,8 +18,21 @@ void main() {
   );
 }
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  int _likes = 0;
+
+  void _like() {
+    setState(() {
+      _likes++;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,18 +41,25 @@ class HomePage extends StatelessWidget {
         title: const Text('Lab L1 · 67115618'),
         backgroundColor: const Color(0xFFFFF7FF),
       ),
-      body: const Center(
+      body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(
+            const Icon(
               Icons.person,
               size: 96,
             ),
-            SizedBox(height: 8),
-            Text(
+            const SizedBox(height: 8),
+            const Text(
               'Wasutorn Aungsupanich - 67115618',
               textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 8),
+            Text('Likes: $_likes'),
+            const SizedBox(height: 8),
+            FilledButton(
+              onPressed: _like,
+              child: const Text('Like'),
             ),
           ],
         ),
