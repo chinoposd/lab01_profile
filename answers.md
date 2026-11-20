@@ -45,12 +45,12 @@ Commit e8d686b (Add Like counter using setState)
 | กรณี | วิธีทดสอบ | ผลที่ได้จริง |
 |---|---|---|
 | Normal 1 | เปิดแอปใหม่ | แอปแสดงชื่อ รหัสนักศึกษา ไอคอน และ Likes: 0 ได้ถูกต้อง |
-| Normal 2 | กด Like 1 ครั้ง | รอทดสอบจาก Likes: 0 ว่าเพิ่มเป็น 1 |
-| Boundary 1 | กด Like 20 ครั้งจาก 0 | รอทดสอบว่าค่าเพิ่มเป็น 20 และแอปไม่เกิด Error |
-| Boundary 2 | หมุนหน้าจอแนวนอน | รอทดสอบการจัดวางและตรวจว่าไม่มีข้อความล้นจอ |
-| Reload | กด Like 3 ครั้ง แล้วกด r และ R | Hot Reload และ Hot Restart ทำงานสำเร็จ หลัง Hot Restart ค่า Likes กลับเป็น 0 (ตรวจยืนยันค่า 3 หลัง r อีกครั้ง) |
-| Failure | ปิด Emulator แล้วลอง flutter run | รอทดสอบและบันทึกข้อความที่ Terminal แสดง |
+| Normal 2 | กด Like 1 ครั้ง | กดปุ่ม Like จาก 0 แล้วตัวเลขเพิ่มเป็น Likes: 1 ถูกต้อง |
+| Boundary 1 | กด Like 20 ครั้งจาก 0 | กด Like ครบ 20 ครั้งแล้วแสดง Likes: 20 ถูกต้อง ไม่พบ Error บนหน้าจอ |
+| Boundary 2 | หมุนหน้าจอแนวนอน | หน้าจอแนวนอนแสดง AppBar ไอคอน ชื่อจริง Likes: 20 และปุ่ม Like ครบถ้วน ไม่พบ Overflow |
+| Reload | กด Like 3 ครั้ง แล้วกด r และ R | Hot Reload ทำงานสำเร็จ ส่วน Hot Restart ทำให้ Likes กลับเป็น 0 (ยังต้องยืนยันค่า Likes หลัง r) |
+| Failure | ปิด Emulator แล้วลอง flutter run | Flutter ไม่พบ Android Emulator แต่ยังแสดง Windows, Chrome และ Edge ให้เลือก จึงพิมพ์ q เพื่อยกเลิกการรัน |
 
 ## การใช้ AI
 
-ใช้ ChatGPT ช่วยอธิบายขั้นตอนการสร้างแอป Flutter การทำงานของ StatefulWidget และ setState() การใช้ Git และ GitHub รวมถึงช่วยวิเคราะห์และแก้ปัญหา Gradle Build นอกจากนี้ยังใช้ช่วยร่างโค้ดและคำตอบในรายงาน โดยนำโค้ดไปรันและตรวจสอบบน Android Emulator ด้วยตนเอง
+ใช้ ChatGPT ช่วยอธิบายขั้นตอนการสร้างแอป Flutter การทำงานของ StatefulWidget และ setState() การใช้ Git และ GitHub รวมถึงช่วยวิเคราะห์และแก้ปัญหา Gradle Build และการตั้งค่า Java Locale นอกจากนี้ยังใช้ช่วยร่างโค้ดและคำตอบในรายงาน โดยนำโค้ดไปรันและทดสอบบน Android Emulator ด้วยตนเอง รวมถึงตรวจสอบผลการทำงานของปุ่ม Like การหมุนหน้าจอ และการใช้งาน Hot Reload กับ Hot Restart
