@@ -48,7 +48,7 @@ Commit e8d686b (Add Like counter using setState)
 | Normal 2 | กด Like 1 ครั้ง | กดปุ่ม Like จาก 0 แล้วตัวเลขเพิ่มเป็น Likes: 1 ถูกต้อง |
 | Boundary 1 | กด Like 20 ครั้งจาก 0 | กด Like ครบ 20 ครั้งแล้วแสดง Likes: 20 ถูกต้อง ไม่พบ Error บนหน้าจอ |
 | Boundary 2 | หมุนหน้าจอแนวนอน | หน้าจอแนวนอนแสดง AppBar ไอคอน ชื่อจริง Likes: 20 และปุ่ม Like ครบถ้วน ไม่พบ Overflow |
-| Reload | กด Like 3 ครั้ง แล้วกด r และ R | Hot Reload ทำงานสำเร็จ ส่วน Hot Restart ทำให้ Likes กลับเป็น 0 (ยังต้องยืนยันค่า Likes หลัง r) |
+| Reload | กด Like 3 ครั้ง แล้วกด r และ R | เมื่อกด r (Hot Reload) ค่า Likes ยังคงเป็น 3 เพราะ State เดิมไม่ถูกรีเซ็ต จากนั้นกด R (Hot Restart) ค่า Likes กลับเป็น 0 เพราะแอปเริ่มต้นใหม่ |
 | Failure | ปิด Emulator แล้วลอง flutter run | Flutter ไม่พบ Android Emulator แต่ยังแสดง Windows, Chrome และ Edge ให้เลือก จึงพิมพ์ q เพื่อยกเลิกการรัน |
 
 ## การใช้ AI
